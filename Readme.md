@@ -1,22 +1,22 @@
-# Spring Boot React OAuth2 Social Login Demo
+# Spring Boot React Booking
 
 ![App Screenshot](screenshot.png)
 
 ## Setting up the Backend Server (spring-social)
 
-+ **Create MySQL database**
++ **Create Postgres database**
 
 	```bash
-	mysql> create database spring_social
+	postgres=# create database booking
 	```
 
 + **Configure database username and password**
 
 	```yml
-	# spring-social/src/main/resources/application.yml
+	# booking/src/main/resources/application.yml
 	spring:
 	    datasource:
-	        url: jdbc:mysql://localhost:3306/spring_social?useSSL=false
+	        url: jdbc:postgresql://localhost:5432/booking
 	        username: <YOUR_DB_USERNAME>
 	        password: <YOUR_DB_PASSWORD>
 	```
@@ -62,7 +62,7 @@
 
 	*Also, make sure that the above mentioned scopes are added in the OAuth2 provider console.*	For example, scope `email` and `profile` should be added in your Google project's OAuth2 consent screen.
 
-+ **Run spring-social**
++ **Run booking**
 
 	```bash
 	mvn spring-boot:run
@@ -71,6 +71,6 @@
 ## Setting up the Frontend Server (react-social)
 
 ```bash
-cd react-social
+cd booking-frontend
 npm install && npm start
 ```
