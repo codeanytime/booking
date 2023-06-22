@@ -1,4 +1,4 @@
-package com.thanhch.booking.controller;
+package com.thanhch.booking.api.controller;
 
 import com.thanhch.booking.exception.BadRequestException;
 import com.thanhch.booking.security.TokenProvider;

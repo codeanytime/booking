@@ -2,7 +2,7 @@
 
 ![App Screenshot](screenshot.png)
 
-## Setting up the Backend Server (spring-social)
+## Setting up the Backend Server
 
 + **Create Postgres database**
 
@@ -68,7 +68,7 @@
 	mvn spring-boot:run
 	```
 
-## Setting up the Frontend Server (react-social)
+## Setting up the Frontend Server
 
 ```bash
 cd booking-frontend

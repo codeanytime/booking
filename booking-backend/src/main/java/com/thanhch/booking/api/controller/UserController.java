@@ -1,4 +1,4 @@
-package com.thanhch.booking.controller;
+package com.thanhch.booking.api.controller;
 
 import com.thanhch.booking.exception.ResourceNotFoundException;
 import com.thanhch.booking.security.CurrentUser;
