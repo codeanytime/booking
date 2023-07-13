@@ -19,7 +19,6 @@ import 'react-s-alert/dist/s-alert-default.css';
 import 'react-s-alert/dist/s-alert-css-effects/slide.css';
 import './App.css';
 import Header from '../common/components/Header';
-import Top from '../common/components/Top';
 
 class App extends Component {
   constructor(props) {
@@ -71,7 +70,6 @@ class App extends Component {
       <div className="app">
         <div className="app-top-box">
           <AppHeader authenticated={this.state.authenticated} onLogout={this.handleLogout} />
-          <Top />
         </div>
         <div className="app-body">
           <Switch>
