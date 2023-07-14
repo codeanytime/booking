@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useState } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -13,10 +14,12 @@ import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import Search from './components/Search';
+import {
+    FormControlLabel, Switch
+} from "@mui/material"
 
 
-
-export default function AppMenu() {
+export default function AppMenu(props: any) {
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
     const [mobileMoreAnchorEl, setMobileMoreAnchorEl] =
         React.useState<null | HTMLElement>(null);
@@ -115,6 +118,13 @@ export default function AppMenu() {
         </Menu>
     );
 
+    const [theme, selectTheme] = useState(true);
+    const changeTheme = () => {
+        selectTheme(!theme);
+        props.parentCallback(theme);
+    }
+
+
     return (
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="static">
@@ -139,6 +149,14 @@ export default function AppMenu() {
                     <Search />
                     <Box sx={{ flexGrow: 1 }} />
                     <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+                        <IconButton>
+                            <FormControlLabel
+                                control={
+                                    <Switch className="select-theme" checked={theme} onChange={changeTheme} />
+                                }
+                                label=""
+                            />
+                        </IconButton>
                         <IconButton size="large" aria-label="show 4 new mails" color="inherit">
                             <Badge badgeContent={4} color="error">
                                 <MailIcon />

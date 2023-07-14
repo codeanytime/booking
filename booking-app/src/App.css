@@ -269,3 +269,7 @@ a:hover {
   padding: 10px;
   color: rgba(0,0,0,.45);
 }
+
+.select-theme {
+  z-index: 100 !important;
+}
